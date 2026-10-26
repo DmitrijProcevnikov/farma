@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============ SEO: базовые метатеги ============ -->
+  <title>Анонимная анкета конференции по гинекологии 2026 — какие темы вам важны</title>
+  <meta name="description" content="Анонимный опрос для врачей-гинекологов, приглашённых на конференцию. Выберите интересующие темы или задайте свой вопрос — без указания имени и контактов. Займёт 1 минуту." />
+  <meta name="keywords" content="анонимная анкета, конференция гинекология, вопросы гинекологов, программа конференции, опрос врачей анонимно" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- ============ SEO: Open Graph ============ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Конференция по гинекологии 2026" />
+  <meta property="og:title" content="Анонимная анкета конференции по гинекологии" />
+  <meta property="og:description" content="Выберите интересующие темы или задайте свой вопрос анонимно — мы учтём их при формировании программы конференции." />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- ============ SEO: Twitter Card ============ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Анонимная анкета конференции по гинекологии" />
+  <meta name="twitter:description" content="Выберите темы или задайте вопрос анонимно — учтём при формировании программы." />
+  <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+
+  <!-- ============ Иконки и тема ============ -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <meta name="theme-color" content="#0b6e4f" />
+
+  <!-- ============ Стили ============ -->
+<style>
+/* ============================================================
+   1. Переменные и сброс
+   ============================================================ */
+:root {
+  /* Фирменные цвета */
+  --color-primary: #0b6e4f;
+  --color-primary-dark: #08553d;
+  --color-primary-light: #e6f4ef;
+  --color-accent: #16a085;
+  --color-accent-soft: #d9f2ea;
+
+  /* Текст */
+  --color-text: #1c2b27;
+  --color-text-muted: #5a6b66;
+  --color-text-inverse: #ffffff;
+
+  /* Фон и границы */
+  --color-bg: #f5f9f7;
+  --color-surface: #ffffff;
+  --color-border: #d6e2dc;
+  --color-border-strong: #b8cbc2;
+
+  /* Состояния */
+  --color-error: #c0392b;
+  --color-error-bg: #fdecea;
+  --color-success: #1e8449;
+  --color-success-bg: #e8f6ee;
+
+  /* Радиусы и тени */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(11, 110, 79, 0.06);
+  --shadow-md: 0 4px 16px rgba(11, 110, 79, 0.10);
+  --shadow-focus: 0 0 0 3px rgba(22, 160, 133, 0.35);
+
+  /* Типографика */
+  --font-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.55;
+
+  /* Отступы */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* Ширина контейнера */
+  --container-max: 760px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   2. Утилиты
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  z-index: 100;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: var(--space-3);
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ============================================================
+   3. Шапка
+   ============================================================ */
+.site-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: var(--color-text-inverse);
+  padding-block: var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.brand__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 1.1rem;
+}
+
+.brand__sub {
+  margin: 0;
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   4. Основной контент / вступление
+   ============================================================ */
+main {
+  flex: 1 0 auto;
+  padding-block: var(--space-6) var(--space-7);
+}
+
+.intro {
+  margin-bottom: var(--space-5);
+}
+
+.intro h1 {
+  margin: 0 0 var(--space-3);
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  line-height: 1.25;
+  color: var(--color-primary-dark);
+}
+
+.intro__text {
+  margin: 0 0 var(--space-4);
+  font-size: 1.0625rem;
+  color: var(--color-text);
+}
+
+.intro__hints {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  list-style: none;
+  background: var(--color-primary-light);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.intro__hints li {
+  position: relative;
+  padding-left: var(--space-4);
+}
+.intro__hints li + li {
+  margin-top: var(--space-1);
+}
+.intro__hints li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ============================================================
+   5. Плашка «Что мы собираем»
+   ============================================================ */
+.privacy-note {
+  margin: 0 0 var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-accent);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+}
+
+.privacy-note__title {
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.privacy-note__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* ============================================================
+   6. Форма
+   ============================================================ */
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* fieldset по умолчанию имеет min-width: min-content — сбрасываем */
+.form-section {
+  margin: 0;
+  padding: var(--space-5);
+  min-width: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Legend в fieldset имеет собственные отступы — задаём вручную */
+.form-section__legend {
+  padding: 0 var(--space-2);
+  margin: 0 0 var(--space-3) 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.form-section__hint {
+  margin: 0 0 var(--space-4);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Поля --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.field-hint {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 110px;
+  max-height: 320px;
+  padding: var(--space-3) var(--space-4);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  background: #fbfdfc;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  resize: vertical;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea::placeholder {
+  color: #9aa9a4;
+  opacity: 1;
+}
+
+textarea:hover {
+  border-color: var(--color-accent);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: #ffffff;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ============================================================
+   7. Сетка тем
+   ============================================================ */
+.topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+/* Карточка темы — универсальный сброс */
+.topic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: #fbfdfc;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.topic:hover {
+  border-color: var(--color-accent);
+  background: var(--color-primary-light);
+}
+
+.topic input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Фокус внутри темы — на карточку (работает во всех браузерах) */
+.topic:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-focus);
+}
+
+/* Выбранная тема: работает и через :has(), и через класс .is-selected (ставит JS) */
+.topic:has(input:checked),
+.topic.is-selected {
+  border-color: var(--color-primary);
+  background: var(--color-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   8. Кнопка и действия
+   ============================================================ */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-6);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  color: var(--color-text-inverse);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Спиннер во время отправки — только кнопка, без pointer-events на всей форме */
+.survey-form.is-submitting .btn {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.survey-form.is-submitting .btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-note {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   9. Ошибки и статус
+   ============================================================ */
+
+/* Поле с ошибкой */
+.is-invalid {
+  border-color: var(--color-error) !important;
+  background: var(--color-error-bg) !important;
+}
+
+.is-invalid:focus,
+.is-invalid:focus-visible {
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.25) !important;
+  outline: none;
+}
+
+/* Текст ошибки */
+.field-error {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-error);
+  line-height: 1.4;
+}
+
+.field-error::before {
+  content: "⚠ ";
+  font-weight: 700;
+}
+
+/* Группа тем с ошибкой */
+.topics.is-invalid {
+  padding: var(--space-3);
+  border: 1.5px solid var(--color-error);
+  border-radius: var(--radius-md);
+  background: var(--color-error-bg);
+}
+
+/* Статус отправки */
+.form-status {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-left: 4px solid transparent;
+}
+
+.form-status--success {
+  background: var(--color-success-bg);
+  border-left-color: var(--color-success);
+  color: #14532d;
+}
+
+.form-status--error {
+  background: var(--color-error-bg);
+  border-left-color: var(--color-error);
+  color: #7f1d1d;
+}
+
+.form-status--loading {
+  background: var(--color-primary-light);
+  border-left-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+.form-status strong {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: 1rem;
+}
+
+/* Плашка статуса всегда на виду */
+.form-status {
+  scroll-margin-top: 24px;
+}
+
+.form-status:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Если форма отправлена успешно — плашка «прилипает» к низу экрана
+   на время показа, чтобы её нельзя было пропустить при скролле. */
+.form-status--success.is-pinned {
+  position: sticky;
+  bottom: var(--space-4);
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   10. Подвал
+   ============================================================ */
+.site-footer {
+  flex-shrink: 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-5);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: var(--space-1) 0;
+}
+
+.site-footer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   11. Адаптив
+   ============================================================ */
+@media (max-width: 640px) {
+  :root {
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+  }
+
+  .form-section {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  /* На мобильных grid тем в один столбец */
+  .topics {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .form-actions {
+    align-items: stretch;
+  }
+
+  .intro__hints {
+    font-size: 0.875rem;
+  }
+
+  .privacy-note {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  textarea {
+    min-height: 140px;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 15px;
+  }
+
+  .brand {
+    font-size: 1.0625rem;
+  }
+
+  .topic {
+    padding: var(--space-2) var(--space-3);
+    gap: var(--space-2);
+  }
+}
+
+/* ============================================================
+   12. Доступность и предпочтения
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .btn {
+    border: 2px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+  .topic {
+    border: 2px solid ButtonText;
+  }
+  .privacy-note {
+    border: 2px solid ButtonText;
+  }
+  .form-status {
+    border: 2px solid ButtonText;
+  }
+}</style>
+  <!-- ============ SEO: Schema.org JSON-LD ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Анонимная анкета конференции по гинекологии",
+    "description": "Анонимный опрос врачей-гинекологов: выбор интересующих тем и сбор вопросов для программы конференции без сбора персональных данных.",
+    "url": "https://example.com/",
+    "inLanguage": "ru-RU",
+    "isPartOf": {
+      "@type": "Event",
+      "name": "Конференция по гинекологии 2026",
+      "startDate": "2026-06-15T09:00:00+03:00",
+      "endDate": "2026-06-15T18:00:00+03:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Конференц-центр",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Москва",
+          "addressCountry": "RU"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Название фармацевтической компании",
+        "url": "https://example.com/"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand__logo" aria-hidden="true">✚</span>
+        <span class="brand__name">Конференция по гинекологии&nbsp;2026</span>
+      </div>
+      <p class="brand__sub">Организатор — Название фармацевтической компании</p>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="intro" aria-labelledby="intro-title">
+      <h1 id="intro-title">Анонимная анкета участника конференции</h1>
+      <p class="intro__text">
+        Уважаемые коллеги! Мы формируем программу конференции и хотим учесть ваши интересы.
+        Отметьте темы, которые вам важны, или задайте свой вопрос — это займёт
+        <strong>около минуты</strong>.
+      </p>
+      <ul class="intro__hints" aria-label="Что важно знать">
+        <li><strong>Имя и контакты не нужны</strong> — анкета полностью анонимна</li>
+        <li>Можно выбрать несколько тем из списка</li>
+        <li>Можно задать собственный вопрос вместо выбора темы</li>
+      </ul>
+    </section>
+
+    <!-- Плашка «что собираем / что не собираем» -->
+    <aside class="privacy-note" aria-labelledby="privacy-title">
+      <h2 id="privacy-title" class="privacy-note__title">Что мы собираем</h2>
+      <p class="privacy-note__text">
+        Только выбранные темы и текст вашего вопроса. Мы <strong>не запрашиваем
+        и не сохраняем</strong> имя, email, телефон, IP-адрес, геолокацию и другие
+        данные, позволяющие вас идентифицировать. Ответы используются исключительно
+        для формирования программы конференции.
+      </p>
+    </aside>
+
+    <!-- ============ Форма опроса ============ -->
+    <form
+      id="survey-form"
+      class="survey-form"
+      action="#"
+      method="post"
+      novalidate
+      aria-describedby="form-note"
+    >
+      <!-- Блок 1: темы -->
+      <fieldset class="form-section">
+        <legend class="form-section__legend">1. Интересующие темы</legend>
+        <p class="form-section__hint" id="topics-hint">
+          Отметьте одну или несколько тем из списка ниже.
+        </p>
+
+        <div class="topics" role="group" aria-describedby="topics-hint" id="topics-group">
+          <label class="topic">
+            <input type="checkbox" name="topics" value="Эндометриоз" />
+            <span>Эндометриоз</span>
+          </label>
+          <label class="topic">
+            <input type="checkbox" name="topics" value="Контрацепция" />
+            <span>Контрацепция</span>
+          </label>
+          <label class="topic">
+            <input type="checkbox" name="topics" value="Менопауза и МГТ" />
+            <span>Менопауза и МГТ</span>
+          </label>
+          <label class="topic">
+            <input type="checkbox" name="topics" value="Беременность и инфекции" />
+            <span>Беременность и инфекции</span>
+          </label>
+          <label class="topic">
+            <input type="checkbox" name="topics" value="Гормональная терапия" />
+            <span>Гормональная терапия</span>
+          </label>
+          <label class="topic">
+            <input type="checkbox" name="topics" value="Онкогинекология" />
+            <span>Онкогинекология</span>
+          </label>
+          <label class="topic">
+            <input type="checkbox" name="topics" value="Репродуктивное здоровье" />
+            <span>Репродуктивное здоровье</span>
+          </label>
+          <label class="topic">
+            <input type="checkbox" name="topics" value="ВПЧ и вакцинация" />
+            <span>ВПЧ и вакцинация</span>
+          </label>
+          <label class="topic topic--other">
+            <input type="checkbox" name="topics" value="Другое / свой вопрос" id="topic-other" />
+            <span>Другое / свой вопрос</span>
+          </label>
+        </div>
+        <p class="field-error" id="topics-error" role="alert" hidden></p>
+      </fieldset>
+
+      <!-- Блок 2: свой вопрос -->
+      <fieldset class="form-section">
+        <legend class="form-section__legend">2. Свой вопрос</legend>
+        <div class="form-group">
+          <label for="custom-question">
+            Ваш вопрос к экспертам конференции
+            <span class="field-hint">(необязательно, если выбраны темы)</span>
+          </label>
+          <textarea
+            id="custom-question"
+            name="custom_question"
+            rows="4"
+            maxlength="1000"
+            aria-describedby="custom-question-hint custom-question-error"
+            placeholder="Например: какова тактика при рецидиве после второй линии терапии?"
+          ></textarea>
+          <p class="field-hint" id="custom-question-hint">
+            До 1000 символов. Пожалуйста, не указывайте в тексте свои персональные данные —
+            вопрос должен оставаться анонимным.
+          </p>
+          <p class="field-error" id="custom-question-error" role="alert" hidden></p>
+        </div>
+      </fieldset>
+
+            <!-- Блок 3: клинический случай -->
+      <fieldset class="form-section">
+        <legend class="form-section__legend">3. Клинический случай</legend>
+        <div class="form-group">
+          <label for="clinical-case">
+            Клинический случай для рассмотрения на конференции
+            <span class="field-hint">(необязательно)</span>
+          </label>
+          <textarea
+            id="clinical-case"
+            name="clinical_case"
+            rows="5"
+            maxlength="2000"
+            aria-describedby="clinical-case-hint clinical-case-error"
+            placeholder="Опишите случай: анамнез, тактика, спорные моменты. Без персональных данных пациента."
+          ></textarea>
+          <p class="field-hint" id="clinical-case-hint">
+            До 2000 символов. Не указывайте ФИО, даты рождения и другие данные пациента —
+            случай должен оставаться обезличенным.
+          </p>
+          <p class="field-error" id="clinical-case-error" role="alert" hidden></p>
+        </div>
+      </fieldset>
+
+      <!-- Отправка -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn--primary" id="submit-btn">
+          Отправить анонимно
+        </button>
+        <p class="form-note" id="form-note">
+          Нажимая кнопку, вы отправляете только выбранные темы и текст вопроса.
+          Отменить отправку после нажатия нельзя.
+        </p>
+      </div>
+
+      <!-- Статус отправки -->
+      <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
+    </form>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Название фармацевтической компании. Все права защищены.</p>
+      <p>
+        Анкета не собирает персональные данные ·
+        <a href="mailto:info@example.com">info@example.com</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+  "use strict";
+/**
+ * app.ts — логика анонимного сайта-опросника.
+ * Компилируется в app.js как ES-модуль.
+ * Отправляет на Google Apps Script (Code.gs) только темы и текст вопроса —
+ * без имени, контактов, IP и любых других идентификаторов.
+ */
+/* ============================================================
+   1. Конфигурация
+   ============================================================ */
+/** URL развёрнутого веб-приложения Google Apps Script. */
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZWOxZGjuVnsLfzgEgtPqNcA09aWlzF2oUTNKq436dj5-29ZSU89Js6QGetaPMJhlK/exec';
+/** Ключ черновика в localStorage. */
+const DRAFT_KEY = 'gyn-survey-draft-v2';
+/** Ключ «отправлено» в sessionStorage (сбрасывается при закрытии вкладки). */
+const SUBMITTED_KEY = 'gyn-survey-submitted-v2';
+/** Максимальная длина своего вопроса (синхронизировано с Code.gs). */
+const MAX_CUSTOM_QUESTION = 1000;
+/** Служебное значение чекбокса «Другое / свой вопрос». */
+const OTHER_TOPIC_VALUE = 'Другое / свой вопрос';
+/** Максимальная длина клинического случая. */
+const MAX_CLINICAL_CASE = 2000;
+/* ============================================================
+   3. Утилиты DOM
+   ============================================================ */
+function $(selector) {
+    return document.querySelector(selector);
+}
+function $$(selector) {
+    return Array.from(document.querySelectorAll(selector));
+}
+function showError(field, errorEl, message) {
+    field.classList.add('is-invalid');
+    field.setAttribute('aria-invalid', 'true');
+    errorEl.textContent = message;
+    errorEl.hidden = false;
+}
+function clearError(field, errorEl) {
+    field.classList.remove('is-invalid');
+    field.removeAttribute('aria-invalid');
+    errorEl.textContent = '';
+    errorEl.hidden = true;
+}
+/** Возвращает карточку темы (.topic) для конкретного чекбокса. */
+function topicCardOf(cb) {
+    return cb.closest('.topic');
+}
+/** Синхронизирует fallback-класс .is-selected у всех карточек тем. */
+function syncTopicCards() {
+    $$('input[name="topics"]').forEach((cb) => {
+        topicCardOf(cb)?.classList.toggle('is-selected', cb.checked);
+    });
+}
+/* ============================================================
+   4. Элементы формы
+   ============================================================ */
+const form = $('#survey-form');
+const topicsGroup = $('#topics-group');
+const topicOther = $('#topic-other');
+const customQuestion = $('#custom-question');
+const clinicalCase = $('#clinical-case');
+const clinicalCaseError = $('#clinical-case-error');
+const submitBtn = $('#submit-btn');
+const formStatus = $('#form-status');
+const topicsError = $('#topics-error');
+const customQuestionError = $('#custom-question-error');
+if (!form ||
+    !topicsGroup ||
+    !topicOther ||
+    !customQuestion ||
+    !submitBtn ||
+    !formStatus ||
+    !topicsError) {
+    console.error('[survey] Не найдены обязательные DOM-элементы.');
+    throw new Error('Не найдены обязательные DOM-элементы.');
+}
+const els = {
+    form: form,
+    topicsGroup: topicsGroup,
+    topicOther: topicOther,
+    customQuestion: customQuestion,
+    clinicalCase: clinicalCase ?? null,
+    submitBtn: submitBtn,
+    status: formStatus,
+    topicsError: topicsError,
+    customQuestionError: customQuestionError,
+    clinicalCaseError: clinicalCaseError ?? null,
+};
+/* ============================================================
+   5. Валидация
+   ============================================================ */
+function getSelectedTopics() {
+    return $$('input[name="topics"]:checked').map((el) => el.value);
+}
+/** Хотя бы одна тема или непустой свой вопрос. */
+function validateTopicsOrQuestion() {
+    const topics = getSelectedTopics();
+    const custom = els.customQuestion.value.trim();
+    if (topics.length === 0 && custom.length === 0) {
+        showError(els.topicsGroup, els.topicsError, 'Выберите хотя бы одну тему или задайте свой вопрос.');
+        return false;
+    }
+    clearError(els.topicsGroup, els.topicsError);
+    return true;
+}
+/** Длина своего вопроса ≤ MAX_CUSTOM_QUESTION. */
+function validateCustomQuestion() {
+    const errEl = els.customQuestionError;
+    if (!errEl)
+        return true;
+    const length = els.customQuestion.value.trim().length;
+    if (length > MAX_CUSTOM_QUESTION) {
+        showError(els.customQuestion, errEl, `Вопрос слишком длинный: ${length} из ${MAX_CUSTOM_QUESTION} символов.`);
+        return false;
+    }
+    clearError(els.customQuestion, errEl);
+    return true;
+}
+function validateClinicalCase() {
+    if (!els.clinicalCase || !els.clinicalCaseError)
+        return true;
+    const length = els.clinicalCase.value.trim().length;
+    if (length > MAX_CLINICAL_CASE) {
+        showError(els.clinicalCase, els.clinicalCaseError, `Случай слишком длинный: ${length} из ${MAX_CLINICAL_CASE} символов.`);
+        return false;
+    }
+    clearError(els.clinicalCase, els.clinicalCaseError);
+    return true;
+}
+function validateForm() {
+    const results = [
+        validateTopicsOrQuestion(),
+        validateCustomQuestion(),
+        validateClinicalCase(),
+    ];
+    return results.every(Boolean);
+}
+/* ============================================================
+   6. Сбор данных
+   ============================================================ */
+function collectPayload() {
+    const topics = getSelectedTopics().filter((t) => t !== OTHER_TOPIC_VALUE);
+    return {
+        topics,
+        customQuestion: els.customQuestion.value.trim(),
+        clinicalCase: els.clinicalCase?.value.trim() ?? '',
+        clientTimestamp: new Date().toISOString(),
+        source: 'conference-2026-anon',
+    };
+}
+/* ============================================================
+   7. Поведение textarea / «Другое»
+   ============================================================ */
+function syncOtherTopicState() {
+    if (els.topicOther.checked) {
+        els.customQuestion.focus();
+    }
+    if (!els.topicOther.checked && els.customQuestion.value.trim().length > 0) {
+        els.topicOther.checked = true;
+        syncTopicCards();
+    }
+}
+/* ============================================================
+   8. Статус
+   ============================================================ */
+function setStatus(status) {
+    els.status.hidden = false;
+    els.status.className = 'form-status';
+    els.status.classList.add(`form-status--${status.type}`);
+    els.status.innerHTML = '';
+    if (status.title) {
+        const title = document.createElement('strong');
+        title.textContent = status.title;
+        els.status.appendChild(title);
+    }
+    const message = document.createElement('span');
+    message.textContent = status.message;
+    els.status.appendChild(message);
+    // Сообщение об успехе/ошибке — всегда на виду.
+    if (status.type !== 'loading') {
+        // Даём браузеру отрисовать плашку, затем прокручиваем.
+        requestAnimationFrame(() => {
+            els.status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            els.status.focus({ preventScroll: true });
+        });
+    }
+}
+function clearStatus() {
+    els.status.hidden = true;
+    els.status.textContent = '';
+    els.status.className = 'form-status';
+}
+function setSubmitting(isSubmitting) {
+    els.form.classList.toggle('is-submitting', isSubmitting);
+    els.submitBtn.disabled = isSubmitting;
+    els.submitBtn.textContent = isSubmitting ? '' : 'Отправить анонимно';
+}
+/* ============================================================
+   9. Отправка
+   ============================================================ */
+async function submitPayload(payload) {
+    // Apps Script не принимает application/json с сайта без preflight,
+    // поэтому шлём text/plain и парсим JSON на сервере.
+    const response = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+        redirect: 'follow',
+    });
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+    }
+    const text = await response.text();
+    try {
+        return JSON.parse(text);
+    }
+    catch {
+        return { ok: true, message: text };
+    }
+}
+async function handleSubmit(event) {
+    event.preventDefault();
+    clearStatus();
+    if (!validateForm()) {
+        setStatus({
+            type: 'error',
+            title: 'Проверьте форму',
+            message: 'Нужно выбрать тему или задать вопрос — см. подсказку под списком.',
+        });
+        const firstError = els.form.querySelector('.is-invalid');
+        firstError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstError?.focus({ preventScroll: true });
+        return;
+    }
+    // Защита от случайной повторной отправки в рамках вкладки.
+    if (sessionStorage.getItem(SUBMITTED_KEY) === '1') {
+        setStatus({
+            type: 'success',
+            title: 'Спасибо!',
+            message: 'Ваш ответ получен анонимно. Мы учтём его при формировании программы конференции.',
+        });
+        // Дополнительно: удерживаем плашку «прилипшей» к низу экрана 6 секунд,
+        // чтобы её нельзя было пропустить, даже если пользователь ушёл вниз.
+        els.status.classList.add('is-pinned');
+        window.setTimeout(() => {
+            els.status.classList.remove('is-pinned');
+        }, 6000);
+        return;
+    }
+    const payload = collectPayload();
+    setSubmitting(true);
+    setStatus({
+        type: 'loading',
+        title: 'Отправляем…',
+        message: 'Пожалуйста, не закрывайте страницу.',
+    });
+    try {
+        const result = await submitPayload(payload);
+        if (result.ok === false) {
+            throw new Error(result.message ?? 'Сервер отклонил запрос');
+        }
+        sessionStorage.setItem(SUBMITTED_KEY, '1');
+        localStorage.removeItem(DRAFT_KEY);
+        setStatus({
+            type: 'success',
+            title: 'Спасибо!',
+            message: 'Ваш ответ получен анонимно. Мы учтём его при формировании программы конференции.',
+        });
+        els.form.reset();
+        if (els.clinicalCase && els.clinicalCaseError) {
+            clearError(els.clinicalCase, els.clinicalCaseError);
+        }
+        // После reset — снимаем все визуальные состояния.
+        syncTopicCards();
+        clearError(els.topicsGroup, els.topicsError);
+        if (els.customQuestionError) {
+            clearError(els.customQuestion, els.customQuestionError);
+        }
+    }
+    catch (error) {
+        console.error('[survey] Ошибка отправки:', error);
+        setStatus({
+            type: 'error',
+            title: 'Не удалось отправить',
+            message: 'Проверьте интернет-соединение и попробуйте ещё раз. Если ошибка повторяется — сообщите организаторам.',
+        });
+    }
+    finally {
+        setSubmitting(false);
+    }
+}
+/* ============================================================
+   10. Черновик в localStorage
+   ============================================================ */
+function saveDraft() {
+    if (sessionStorage.getItem(SUBMITTED_KEY) === '1')
+        return;
+    const draft = {
+        topics: getSelectedTopics(),
+        customQuestion: els.customQuestion.value,
+        clinicalCase: els.clinicalCase?.value ?? '',
+    };
+    try {
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+    }
+    catch {
+        /* переполнение хранилища — игнорируем */
+    }
+}
+function restoreDraft() {
+    if (sessionStorage.getItem(SUBMITTED_KEY) === '1')
+        return;
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (!raw)
+        return;
+    try {
+        const draft = JSON.parse(raw);
+        const topics = new Set(draft.topics ?? []);
+        $$('input[name="topics"]').forEach((el) => {
+            el.checked = topics.has(el.value);
+        });
+        els.customQuestion.value = draft.customQuestion ?? '';
+        if (els.clinicalCase) {
+            els.clinicalCase.value = draft.clinicalCase ?? '';
+        }
+        // Fallback-подсветка для браузеров без :has()
+        syncTopicCards();
+    }
+    catch {
+        localStorage.removeItem(DRAFT_KEY);
+    }
+}
+/* ============================================================
+   11. Инициализация
+   ============================================================ */
+function init() {
+    // Восстановление черновика (включая .is-selected).
+    restoreDraft();
+    els.status.tabIndex = -1;
+    els.form.addEventListener('submit', (e) => {
+        void handleSubmit(e);
+    });
+    // Поведение «Другое / свой вопрос».
+    els.topicOther.addEventListener('change', () => {
+        syncOtherTopicState();
+        syncTopicCards();
+        saveDraft();
+    });
+    // Ввод своего вопроса.
+    els.customQuestion.addEventListener('input', () => {
+        // Автоматически отмечаем «Другое», если пользователь печатает.
+        if (els.customQuestion.value.trim().length > 0 &&
+            !els.topicOther.checked) {
+            els.topicOther.checked = true;
+            syncTopicCards();
+        }
+        // Снимаем ошибку длины при исправлении.
+        if (els.customQuestionError &&
+            els.customQuestion.classList.contains('is-invalid')) {
+            clearError(els.customQuestion, els.customQuestionError);
+        }
+        saveDraft();
+    });
+    // Темы: подсветка + снятие ошибки + сохранение.
+    $$('input[name="topics"]').forEach((cb) => {
+        cb.addEventListener('change', () => {
+            topicCardOf(cb)?.classList.toggle('is-selected', cb.checked);
+            if (els.topicsGroup.classList.contains('is-invalid')) {
+                clearError(els.topicsGroup, els.topicsError);
+            }
+            saveDraft();
+        });
+    });
+    window.addEventListener('beforeunload', saveDraft);
+    // Если уже отправляли в этой вкладке — сообщаем сразу.
+    if (sessionStorage.getItem(SUBMITTED_KEY) === '1') {
+        setStatus({
+            type: 'success',
+            title: 'Вы уже отправили ответ в этой вкладке',
+            message: 'Спасибо! Если нужно отправить ещё один — откройте сайт в новой вкладке.',
+        });
+    }
+    if (els.clinicalCase && els.clinicalCaseError) {
+        els.clinicalCase.addEventListener('input', () => {
+            if (els.clinicalCase.classList.contains('is-invalid')) {
+                clearError(els.clinicalCase, els.clinicalCaseError);
+            }
+            saveDraft();
+        });
+    }
+}
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+}
+else {
+    init();
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админ-панель — опросник конференции 2026</title>
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="referrer" content="no-referrer" />
+  <style>
+    /* ============================================================
+   1. Переменные и сброс
+   ============================================================ */
+:root {
+  /* Фирменные цвета */
+  --color-primary: #0b6e4f;
+  --color-primary-dark: #08553d;
+  --color-primary-light: #e6f4ef;
+  --color-accent: #16a085;
+  --color-accent-soft: #d9f2ea;
+
+  /* Текст */
+  --color-text: #1c2b27;
+  --color-text-muted: #5a6b66;
+  --color-text-inverse: #ffffff;
+
+  /* Фон и границы */
+  --color-bg: #f5f9f7;
+  --color-surface: #ffffff;
+  --color-border: #d6e2dc;
+  --color-border-strong: #b8cbc2;
+
+  /* Состояния */
+  --color-error: #c0392b;
+  --color-error-bg: #fdecea;
+  --color-success: #1e8449;
+  --color-success-bg: #e8f6ee;
+
+  /* Радиусы и тени */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(11, 110, 79, 0.06);
+  --shadow-md: 0 4px 16px rgba(11, 110, 79, 0.10);
+  --shadow-focus: 0 0 0 3px rgba(22, 160, 133, 0.35);
+
+  /* Типографика */
+  --font-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.55;
+
+  /* Отступы */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* Ширина контейнера */
+  --container-max: 760px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   2. Утилиты
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  z-index: 100;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: var(--space-3);
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ============================================================
+   3. Шапка
+   ============================================================ */
+.site-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: var(--color-text-inverse);
+  padding-block: var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.brand__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 1.1rem;
+}
+
+.brand__sub {
+  margin: 0;
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   4. Основной контент / вступление
+   ============================================================ */
+main {
+  flex: 1 0 auto;
+  padding-block: var(--space-6) var(--space-7);
+}
+
+.intro {
+  margin-bottom: var(--space-5);
+}
+
+.intro h1 {
+  margin: 0 0 var(--space-3);
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  line-height: 1.25;
+  color: var(--color-primary-dark);
+}
+
+.intro__text {
+  margin: 0 0 var(--space-4);
+  font-size: 1.0625rem;
+  color: var(--color-text);
+}
+
+.intro__hints {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  list-style: none;
+  background: var(--color-primary-light);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.intro__hints li {
+  position: relative;
+  padding-left: var(--space-4);
+}
+.intro__hints li + li {
+  margin-top: var(--space-1);
+}
+.intro__hints li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ============================================================
+   5. Плашка «Что мы собираем»
+   ============================================================ */
+.privacy-note {
+  margin: 0 0 var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-accent);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+}
+
+.privacy-note__title {
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.privacy-note__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* ============================================================
+   6. Форма
+   ============================================================ */
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* fieldset по умолчанию имеет min-width: min-content — сбрасываем */
+.form-section {
+  margin: 0;
+  padding: var(--space-5);
+  min-width: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Legend в fieldset имеет собственные отступы — задаём вручную */
+.form-section__legend {
+  padding: 0 var(--space-2);
+  margin: 0 0 var(--space-3) 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.form-section__hint {
+  margin: 0 0 var(--space-4);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Поля --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.field-hint {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 110px;
+  max-height: 320px;
+  padding: var(--space-3) var(--space-4);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  background: #fbfdfc;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  resize: vertical;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea::placeholder {
+  color: #9aa9a4;
+  opacity: 1;
+}
+
+textarea:hover {
+  border-color: var(--color-accent);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: #ffffff;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ============================================================
+   7. Сетка тем
+   ============================================================ */
+.topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+/* Карточка темы — универсальный сброс */
+.topic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: #fbfdfc;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.topic:hover {
+  border-color: var(--color-accent);
+  background: var(--color-primary-light);
+}
+
+.topic input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Фокус внутри темы — на карточку (работает во всех браузерах) */
+.topic:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-focus);
+}
+
+/* Выбранная тема: работает и через :has(), и через класс .is-selected (ставит JS) */
+.topic:has(input:checked),
+.topic.is-selected {
+  border-color: var(--color-primary);
+  background: var(--color-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   8. Кнопка и действия
+   ============================================================ */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-6);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  color: var(--color-text-inverse);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Спиннер во время отправки — только кнопка, без pointer-events на всей форме */
+.survey-form.is-submitting .btn {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.survey-form.is-submitting .btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-note {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   9. Ошибки и статус
+   ============================================================ */
+
+/* Поле с ошибкой */
+.is-invalid {
+  border-color: var(--color-error) !important;
+  background: var(--color-error-bg) !important;
+}
+
+.is-invalid:focus,
+.is-invalid:focus-visible {
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.25) !important;
+  outline: none;
+}
+
+/* Текст ошибки */
+.field-error {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-error);
+  line-height: 1.4;
+}
+
+.field-error::before {
+  content: "⚠ ";
+  font-weight: 700;
+}
+
+/* Группа тем с ошибкой */
+.topics.is-invalid {
+  padding: var(--space-3);
+  border: 1.5px solid var(--color-error);
+  border-radius: var(--radius-md);
+  background: var(--color-error-bg);
+}
+
+/* Статус отправки */
+.form-status {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-left: 4px solid transparent;
+}
+
+.form-status--success {
+  background: var(--color-success-bg);
+  border-left-color: var(--color-success);
+  color: #14532d;
+}
+
+.form-status--error {
+  background: var(--color-error-bg);
+  border-left-color: var(--color-error);
+  color: #7f1d1d;
+}
+
+.form-status--loading {
+  background: var(--color-primary-light);
+  border-left-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+.form-status strong {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: 1rem;
+}
+
+/* Плашка статуса всегда на виду */
+.form-status {
+  scroll-margin-top: 24px;
+}
+
+.form-status:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Если форма отправлена успешно — плашка «прилипает» к низу экрана
+   на время показа, чтобы её нельзя было пропустить при скролле. */
+.form-status--success.is-pinned {
+  position: sticky;
+  bottom: var(--space-4);
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   10. Подвал
+   ============================================================ */
+.site-footer {
+  flex-shrink: 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-5);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: var(--space-1) 0;
+}
+
+.site-footer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   11. Адаптив
+   ============================================================ */
+@media (max-width: 640px) {
+  :root {
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+  }
+
+  .form-section {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  /* На мобильных grid тем в один столбец */
+  .topics {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .form-actions {
+    align-items: stretch;
+  }
+
+  .intro__hints {
+    font-size: 0.875rem;
+  }
+
+  .privacy-note {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  textarea {
+    min-height: 140px;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 15px;
+  }
+
+  .brand {
+    font-size: 1.0625rem;
+  }
+
+  .topic {
+    padding: var(--space-2) var(--space-3);
+    gap: var(--space-2);
+  }
+}
+
+/* ============================================================
+   12. Доступность и предпочтения
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .btn {
+    border: 2px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+  .topic {
+    border: 2px solid ButtonText;
+  }
+  .privacy-note {
+    border: 2px solid ButtonText;
+  }
+  .form-status {
+    border: 2px solid ButtonText;
+  }
+}
+    /* Минимальные локальные стили для дашборда */
+    .admin-login {
+      max-width: 420px;
+      margin: var(--space-7) auto;
+      padding: var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .admin-login h1 {
+      margin: 0 0 var(--space-4);
+      font-size: 1.25rem;
+      color: var(--color-primary-dark);
+    }
+    .admin-login input[type="password"] {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      font-family: inherit;
+      font-size: 1rem;
+      border: 1.5px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      background: #fbfdfc;
+    }
+    .admin-login input[type="password"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-focus);
+    }
+    .admin-login button { margin-top: var(--space-3); width: 100%; }
+
+    .admin-dashboard { padding-block: var(--space-6); }
+    .admin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-5);
+    }
+    .admin-header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--color-primary-dark);
+    }
+    .admin-header__actions {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--color-primary);
+      border: 1.5px solid var(--color-primary);
+      box-shadow: none;
+    }
+    .btn--ghost:hover {
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--space-3);
+      margin-bottom: var(--space-5);
+    }
+    .kpi {
+      padding: var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    .kpi__value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.1;
+    }
+    .kpi__label {
+      margin-top: var(--space-1);
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+    }
+
+    .admin-card {
+      margin-bottom: var(--space-5);
+      padding: var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    .admin-card h2 {
+      margin: 0 0 var(--space-4);
+      font-size: 1.125rem;
+      color: var(--color-primary-dark);
+    }
+
+    /* Топ тем */
+    .topic-bar {
+      display: grid;
+      grid-template-columns: minmax(140px, 1fr) 2fr auto;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-2) 0;
+      border-bottom: 1px dashed var(--color-border);
+      font-size: 0.9375rem;
+    }
+    .topic-bar:last-child { border-bottom: none; }
+    .topic-bar__name { font-weight: 500; }
+    .topic-bar__track {
+      height: 10px;
+      background: var(--color-primary-light);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .topic-bar__fill {
+      height: 100%;
+      background: var(--color-accent);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+    .topic-bar__meta {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+
+    /* Таблицы */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+    }
+    table.admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    .admin-table th,
+    .admin-table td {
+      padding: var(--space-2) var(--space-3);
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .admin-table th {
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+    }
+    .admin-table tr:last-child td { border-bottom: none; }
+    .admin-table td.time { white-space: nowrap; color: var(--color-text-muted); }
+    .admin-table td.question { max-width: 520px; word-break: break-word; }
+
+    .empty {
+      padding: var(--space-4);
+      color: var(--color-text-muted);
+      text-align: center;
+      font-style: italic;
+    }
+
+    .admin-error {
+      margin-top: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-error-bg);
+      border-left: 4px solid var(--color-error);
+      border-radius: var(--radius-sm);
+      color: #7f1d1d;
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 640px) {
+      .topic-bar {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+      }
+      .topic-bar__track { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ============ Логин ============ -->
+  <main id="login-view" class="container" hidden>
+    <div class="admin-login">
+      <h1>Админ-панель опросника</h1>
+      <form id="login-form" novalidate>
+        <label for="token" style="font-weight:600;font-size:0.9375rem;">
+          Токен доступа
+        </label>
+        <input
+          type="password"
+          id="token"
+          name="token"
+          autocomplete="current-password"
+          placeholder="Введите токен"
+          required
+          style="margin-top:8px;"
+        />
+        <button type="submit" class="btn btn--primary">Войти</button>
+        <p class="admin-error" id="login-error" role="alert" hidden></p>
+      </form>
+    </div>
+  </main>
+
+  <!-- ============ Дашборд ============ -->
+  <main id="dashboard-view" class="container admin-dashboard" hidden>
+    <div class="admin-header">
+      <h1>Сводка по анкетам</h1>
+      <div class="admin-header__actions">
+        <button type="button" class="btn btn--ghost" id="refresh-btn">Обновить</button>
+        <button type="button" class="btn btn--ghost" id="export-btn">Скачать CSV</button>
+        <button type="button" class="btn btn--ghost" id="logout-btn">Выйти</button>
+      </div>
+    </div>
+
+    <!-- KPI -->
+    <section class="kpi-grid" id="kpi-grid" aria-label="Ключевые показатели"></section>
+
+    <!-- Топ тем -->
+    <section class="admin-card" aria-labelledby="topics-title">
+      <h2 id="topics-title">Топ тем</h2>
+      <div id="topics-list"></div>
+    </section>
+
+    <!-- Вопросы -->
+    <section class="admin-card" aria-labelledby="questions-title">
+      <h2 id="questions-title">
+        Вопросы врачей <span id="questions-count" style="font-weight:400;color:var(--color-text-muted);font-size:0.875rem;"></span>
+      </h2>
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr><th style="width:140px;">Время</th><th>Вопрос</th></tr>
+          </thead>
+          <tbody id="questions-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Свежие -->
+    <section class="admin-card" aria-labelledby="recent-title">
+      <h2 id="recent-title">Последние 15 ответов</h2>
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr><th style="width:140px;">Время</th><th>Темы</th><th>Вопрос</th></tr>
+          </thead>
+          <tbody id="recent-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="admin-card" aria-labelledby="cases-title">
+      <h2 id="cases-title">
+        Клинические случаи
+        <span id="cases-count" style="font-weight:400;color:var(--color-text-muted);font-size:0.875rem;"></span>
+      </h2>
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr><th style="width:140px;">Время</th><th>Описание</th></tr>
+          </thead>
+          <tbody id="cases-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="admin-error" id="dashboard-error" role="alert" hidden></p>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzZWOxZGjuVnsLfzgEgtPqNcA09aWlzF2oUTNKq436dj5-29ZSU89Js6QGetaPMJhlK/exec';
+      var TOKEN_KEY = 'gyn-admin-token';
+      var LAST_DATA = null;
+
+      var loginView = document.getElementById('login-view');
+      var dashView = document.getElementById('dashboard-view');
+      var loginForm = document.getElementById('login-form');
+      var tokenInput = document.getElementById('token');
+      var loginError = document.getElementById('login-error');
+      var dashError = document.getElementById('dashboard-error');
+
+      function show(el) { el.hidden = false; }
+      function hide(el) { el.hidden = true; }
+
+      function showLoginError(msg) {
+        loginError.textContent = msg;
+        show(loginError);
+      }
+      function clearLoginError() {
+        loginError.textContent = '';
+        hide(loginError);
+      }
+      function showDashError(msg) {
+        dashError.textContent = msg;
+        show(dashError);
+      }
+      function clearDashError() {
+        dashError.textContent = '';
+        hide(dashError);
+      }
+
+      function fetchData(token) {
+        var url = ENDPOINT + '?admin=1&token=' + encodeURIComponent(token) + '&t=' + Date.now();
+        return fetch(url, { method: 'GET', redirect: 'follow' }).then(function (r) {
+          if (r.status === 401) {
+            var err = new Error('unauthorized');
+            err.code = 401;
+            throw err;
+          }
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        });
+      }
+
+      function renderKpi(data) {
+        var grid = document.getElementById('kpi-grid');
+        var items = [
+          { value: data.total, label: 'Всего ответов' },
+          { value: data.last24h, label: 'За 24 часа' },
+          { value: data.withQuestion, label: 'С вопросом' },
+          { value: data.withCase, label: 'С клин. случаем' },
+          { value: data.avgTopics, label: 'Ср. тем на анкету' },
+        ];
+        grid.innerHTML = items.map(function (it) {
+          return (
+            '<div class="kpi">' +
+            '<div class="kpi__value">' + it.value + '</div>' +
+            '<div class="kpi__label">' + it.label + '</div>' +
+            '</div>'
+          );
+        }).join('');
+      }
+
+      function renderTopics(data) {
+        var list = document.getElementById('topics-list');
+        if (!data.topics.length) {
+          list.innerHTML = '<p class="empty">Пока нет выбранных тем.</p>';
+          return;
+        }
+        var max = data.topics[0].count || 1;
+        list.innerHTML = data.topics.map(function (t) {
+          var width = Math.max(4, Math.round((t.count / max) * 100));
+          return (
+            '<div class="topic-bar">' +
+            '<div class="topic-bar__name">' + escapeHtml(t.name) + '</div>' +
+            '<div class="topic-bar__track"><div class="topic-bar__fill" style="width:' + width + '%"></div></div>' +
+            '<div class="topic-bar__meta">' + t.count + ' · ' + t.percent + '%</div>' +
+            '</div>'
+          );
+        }).join('');
+      }
+
+      function renderQuestions(data) {
+        var tbody = document.getElementById('questions-body');
+        var countEl = document.getElementById('questions-count');
+        countEl.textContent = '(' + data.questions.length + ')';
+
+        if (!data.questions.length) {
+          tbody.innerHTML = '<tr><td colspan="2" class="empty">Вопросов пока нет.</td></tr>';
+          return;
+        }
+        tbody.innerHTML = data.questions.map(function (q) {
+          return (
+            '<tr>' +
+            '<td class="time">' + escapeHtml(q.timestamp) + '</td>' +
+            '<td class="question">' + escapeHtml(q.text) + '</td>' +
+            '</tr>'
+          );
+        }).join('');
+      }
+
+      function renderCases(data) {
+        var tbody = document.getElementById('cases-body');
+        var countEl = document.getElementById('cases-count');
+        var list = data.cases || [];
+        countEl.textContent = '(' + list.length + ')';
+
+        if (!list.length) {
+          tbody.innerHTML = '<tr><td colspan="2" class="empty">Клинических случаев пока нет.</td></tr>';
+          return;
+        }
+        tbody.innerHTML = list.map(function (c) {
+          return (
+            '<tr>' +
+            '<td class="time">' + escapeHtml(c.timestamp) + '</td>' +
+            '<td class="question">' + escapeHtml(c.text) + '</td>' +
+            '</tr>'
+          );
+        }).join('');
+      }
+
+      function renderRecent(data) {
+        var tbody = document.getElementById('recent-body');
+        if (!data.recent.length) {
+          tbody.innerHTML = '<tr><td colspan="3" class="empty">Пока нет ответов.</td></tr>';
+          return;
+        }
+        tbody.innerHTML = data.recent.map(function (r) {
+          return (
+            '<tr>' +
+            '<td class="time">' + escapeHtml(r.timestamp) + '</td>' +
+            '<td>' + escapeHtml(r.topics) + '</td>' +
+            '<td class="question">' + escapeHtml(r.question || '—') + '</td>' +
+            '</tr>'
+          );
+        }).join('');
+      }
+
+      function renderDashboard(data) {
+        LAST_DATA = data;
+        renderKpi(data);
+        renderTopics(data);
+        renderQuestions(data);
+        renderCases(data);
+        renderRecent(data);
+      }
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function exportCsv() {
+        if (!LAST_DATA) return;
+        var rows = [['timestamp', 'topics', 'question']];
+        // Вопросы как отдельный лист
+        LAST_DATA.questions.forEach(function (q) {
+          rows.push([q.timestamp, '', q.text]);
+        });
+        // Плюс свежие (последние 15) с темами
+        rows.push([]);
+        rows.push(['recent_timestamp', 'topics', 'question']);
+         (LAST_DATA.cases || []).forEach(function (c) {
+        rows.push(['clinical_case', c.timestamp, '', c.text]);
+        });
+        LAST_DATA.recent.forEach(function (r) {
+          rows.push([r.timestamp, r.topics, r.question]);
+        });
+
+        var csv = rows.map(function (row) {
+          return row.map(function (cell) {
+            var s = String(cell == null ? '' : cell);
+            if (/[",\n\r;]/.test(s)) {
+              return '"' + s.replace(/"/g, '""') + '"';
+            }
+            return s;
+          }).join(';');
+        }).join('\r\n');
+
+        // BOM для Excel с кириллицей
+        var blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'survey-questions-' + new Date().toISOString().slice(0, 10) + '.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      function enterDashboard(token) {
+        hide(loginView);
+        show(dashView);
+        clearDashError();
+        fetchData(token)
+          .then(function (res) {
+            if (!res.ok) throw new Error(res.message || 'Ошибка ответа сервера');
+            renderDashboard(res.data);
+          })
+          .catch(function (err) {
+            if (err.code === 401) {
+              sessionStorage.removeItem(TOKEN_KEY);
+              show(loginView);
+              hide(dashView);
+              showLoginError('Токен не подошёл. Попробуйте снова.');
+            } else {
+              showDashError('Не удалось загрузить данные: ' + err.message);
+            }
+          });
+      }
+
+      // Логин
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearLoginError();
+        var token = tokenInput.value.trim();
+        if (!token) {
+          showLoginError('Введите токен доступа.');
+          return;
+        }
+        fetchData(token)
+          .then(function (res) {
+            if (!res.ok) throw new Error(res.message || 'Ошибка ответа сервера');
+            sessionStorage.setItem(TOKEN_KEY, token);
+            enterDashboard(token);
+          })
+          .catch(function (err) {
+            if (err.code === 401) {
+              showLoginError('Неверный токен.');
+            } else {
+              showLoginError('Ошибка: ' + err.message);
+            }
+          });
+      });
+
+      // Обновить
+      document.getElementById('refresh-btn').addEventListener('click', function () {
+        var token = sessionStorage.getItem(TOKEN_KEY);
+        if (!token) return;
+        clearDashError();
+        fetchData(token)
+          .then(function (res) {
+            if (!res.ok) throw new Error(res.message || 'Ошибка ответа сервера');
+            renderDashboard(res.data);
+          })
+          .catch(function (err) {
+            showDashError('Обновление не удалось: ' + err.message);
+          });
+      });
+
+      // CSV
+      document.getElementById('export-btn').addEventListener('click', exportCsv);
+
+      // Выйти
+      document.getElementById('logout-btn').addEventListener('click', function () {
+        sessionStorage.removeItem(TOKEN_KEY);
+        LAST_DATA = null;
+        tokenInput.value = '';
+        hide(dashView);
+        show(loginView);
+        clearLoginError();
+      });
+
+      // Автовход, если токен уже в sessionStorage
+      var saved = sessionStorage.getItem(TOKEN_KEY);
+      if (saved) {
+        enterDashboard(saved);
+      } else {
+        show(loginView);
+      }
+    })();
+  </script>
+</body>
+</html>
